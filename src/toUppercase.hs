@@ -1,6 +1,5 @@
 {-|
   Naive re-implementation of a 'toUpper' function.
-  Please don't trust this one and use 'Data.Char.toUpper' :)
 -}
 
 import Data.List (find)

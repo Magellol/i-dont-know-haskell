@@ -4,5 +4,8 @@
 
 sum' :: (Num a) => [a] -> a
 
-sum' [] = 0
-sum' (head:tail) = head + sum' tail
+sum' = foldl1 (+)
+
+-- Variation using recursion
+-- sum' [] = 0
+-- sum' (head:tail) = head + sum' tail

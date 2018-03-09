@@ -5,11 +5,8 @@
 import Data.List (find)
 import Data.Maybe (fromMaybe)
 
-matchFirst :: (Eq a) => a -> (a, b) -> Bool
-matchFirst x (y, _) = x == y
-
-upperLetter :: Char -> Char
-upperLetter x = snd $ fromMaybe (x, x) (find (matchFirst x) (zip ['a'..'z'] ['A'..'Z']))
-
 toUppercase :: String -> String
-toUppercase = map upperLetter
+toUppercase = map toUpper'
+  where letters = zip ['a'..'z'] ['A'..'Z']
+        matchFirst x (y, _) = y == x
+        toUpper' x = snd $ fromMaybe (x, x) $ find (matchFirst x) letters
